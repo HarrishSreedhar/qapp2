@@ -4,7 +4,7 @@ var app = express();
 //your routes here
 app.get('/', function (req, res) {
 	
-    res.sendfile('/t1.html');
+    res.sendfile('1.html');
 });
 
 app.listen(8080, function () {
