@@ -2,9 +2,9 @@ var express = require('express');
 var app = express();
 
 //your routes here
-app.get('/login', function (req, res) {
+app.get('/', function (req, res) {
 	
-    res.send("Holaaaa!!!!");
+    res.sendfile('/t1.html');
 });
 
 app.listen(8080, function () {
