@@ -1,7 +1,14 @@
-FROM nginx:latest
+FROM mhart/alpine-node:7.6.0
 
-#Copy the configuration
-COPY app/conf/nginx.conf /etc/nginx
+WORKDIR /src
 
-#Copy the static files to be served
-COPY app/src/ /usr/share/nginx/html
+# Add package.json
+ADD app/src/package.json /src/package.json
+
+#install node modules
+RUN npm install
+
+#Add the source code
+ADD app/src /src
+
+CMD ["node", "server.js"]
