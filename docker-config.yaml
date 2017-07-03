@@ -1,4 +1,4 @@
-image: "nodejs-express:<tag>"
-port: 8080
+image: "nginx:latest"
+port: 80
 volume_mounts: null
-env_variables: []
+env_variables: ["NGINX_HOST", "NGINX_PORT"]
